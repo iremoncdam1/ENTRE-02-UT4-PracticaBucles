@@ -1,6 +1,6 @@
 import java.util.Random;
 /**
- *   autor - Iratxe Remón 
+ * @author - Iratxe Remón 
  */
 public class PracticaBucles {
     private final char ESPACIO = ' ';
@@ -38,7 +38,7 @@ public class PracticaBucles {
         int contador = 0;
         int sumaImpares = 0;
         int maximoPar = -1000;
-        System.out.println("Nº máximo de aleatorios a generar " + n);
+        System.out.println("\nNº máximo de aleatorios a generar " + n);
         System.out.println("o hasta que salga el 0.\n");
         while (creados < n && numero != 0) {
             numero = generador.nextInt(51000) - 1000;
@@ -85,15 +85,19 @@ public class PracticaBucles {
     public int obtenerNumeroSinCeros(int numero)   {
         int resul = 0;
         int exp = 0;
-        while (numero > 0) {
+        int num = numero;
+        while (numero != 0) {
             int cociente = numero / 10;
             int resto = numero % 10;
             if (resto != 0) {
                 int pot = (int) Math.pow (10, exp);
-                resul = resul + resto * pot;
+                resul = resul + (Math.abs(resto)) * pot;
                 exp++;
             }
             numero = cociente;
+        }
+        if (num < 0) {
+            resul = resul * (-1); 
         }
         return resul;
     }
@@ -111,7 +115,7 @@ public class PracticaBucles {
      *  Hay que usar el método escribirCaracter()
      */
     public void escribirLetraN(int altura)    {
-       System.out.println("Letra N - Altura: " + altura + "\n");
+       System.out.print("Letra N - Altura: " + altura + "\n");
        escribirCaracter(CARACTER, altura);
     }
 

@@ -16,13 +16,11 @@ public class Utilidades
         
     }
     
-     /**
+    /**
      *  Borrar la pantalla
      */
     public static void borrarPantalla()    {
         System.out.print('\u000C');
 
     }
-    
-    
 }
